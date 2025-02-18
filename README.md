@@ -22,7 +22,7 @@ La 3 es otra parte de la base de datos, relacionado con nº de bichos matados en
     - No tan importante la consistencia
 
 ### Pasos a seguir
-
+[x] 0. Crear el readme especificando el problema y como enfocarlo
 [] 1. Definir bien las querys a realizar con cada leaderboard
 [] 2. Crear las tablas teniendo en cuenta las primery, cluster y static keys (lo que sea eso)
 [] 3. Tener en cuenta para cada una el tipo de cassandra según que es más importante
