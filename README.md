@@ -38,7 +38,6 @@ La 3 es otra parte de la base de datos, relacionado con nº de bichos matados en
 
 
 ### Entidad Relación
-<img src="https://embed.creately.com/xHZvJPuatOl?token=kWHSVjgrwFZV1cby&type=svg">
 
 ![Diagrama_Chebotko](er_cutted.svg)
 
@@ -47,8 +46,6 @@ La 3 es otra parte de la base de datos, relacionado con nº de bichos matados en
 
 
 ### Chebotko Diagram
-<img src="https://embed.creately.com/fQEWsmlIUvH?token=tcNEL44PZ8e6qNwf&type=svg">
-
 
 ![Diagrama_Chebotko](diagrama.png)
 
