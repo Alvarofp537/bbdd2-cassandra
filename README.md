@@ -37,5 +37,10 @@ La 3 es otra parte de la base de datos, relacionado con nº de bichos matados en
 6. Haz un fichero .cql que realice las consultas de escritura y lectura necesarias. Incluye el nivel de consistencia de cada consulta, teniendo en cuenta las características de los diferentes rankings.
 
 
-### ER
- <img src="https://embed.creately.com/xHZvJPuatOl?token=BPscxbGpToSTET6H&type=svg"> 
+### Entidad Relación
+<img src="https://embed.creately.com/xHZvJPuatOl?token=hIYxMfX4xba1FOkW&type=svg">
+
+### Queries
+
+
+### Chebotsko Diagram
