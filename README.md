@@ -35,3 +35,7 @@ La 3 es otra parte de la base de datos, relacionado con nº de bichos matados en
 4. Haz un fichero .cql que creen tu diseño en Cassandra y cargue los ficheros .csv creados en el paso 2. Se debe utilizar un factor de replicación de 2 y tener en cuenta que se las pruebas se ejecutaran en un cluster local. 
 5. [OPCIONAL] Si el diseño lo necesita, actualiza la tabla de escrituras para incluir cualquier modificación que sea necesaria en la información que se le debe proporcionar al servidor. 
 6. Haz un fichero .cql que realice las consultas de escritura y lectura necesarias. Incluye el nivel de consistencia de cada consulta, teniendo en cuenta las características de los diferentes rankings.
+
+
+### ER
+ <img src="https://embed.creately.com/xHZvJPuatOl?token=BPscxbGpToSTET6H&type=svg"> 
