@@ -45,4 +45,6 @@ La 3 es otra parte de la base de datos, relacionado con nº de bichos matados en
 
 
 ### Chebotko Diagram
-<img src="https://embed.creately.com/fQEWsmlIUvH?token=tcNEL44PZ8e6qNwf&type=svg">
+<img src="https://embed.creately.com/fQEWsmlIUvH?token=tcNEL44PZ8e6qNwf&type=svg">ç
+![Diagrama de ejemplo](diagrama.png)
+
