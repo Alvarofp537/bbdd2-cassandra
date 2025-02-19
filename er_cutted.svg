@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<svg width="1016.7777777777778" height="716" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.0">
+ <defs>
+  <style type="text/css">@font-face {
+                font-family: &#x27;lt_regular&#x27;;
+                src: url(&#x27;https://app.creately.com/d/assets/fonts/lato/lt-regular-webfont.woff2&#x27;) format(&#x27;woff2&#x27;),
+                    url(&#x27;https://app.creately.com/d/assets/fonts/lato/lt-regular-webfont.woff&#x27;) format(&#x27;woff&#x27;);
+                font-weight: normal;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: &#x27;noto_regular&#x27;;
+                src: url(&#x27;https://app.creately.com/d/assets/fonts/noto/noto-regular.woff&#x27;) format(&#x27;woff&#x27;),
+                     url(&#x27;https://app.creately.com/d/assets/fonts/noto/noto-regular.woff2&#x27;) format(&#x27;woff2&#x27;);
+                font-weight: normal;
+                font-style: normal;
+            }
+        p {
+            margin: 0;
+        }</style>
+ </defs>
+ <defs>
+  <style>span{ display: inline-block; }</style>
+ </defs>
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="d7sidU6b2n6">
+   <g id="svg_1" transform="translate(880 100)">
+    <rect fill="rgba(1,95,169,1)" height="50" id="svg_2" stroke="#015fa9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" width="100" x="-465" y="329"/>
+   </g>
+   <g id="svg_3" transform="translate(890 116)">
+    <text fill="#ffffff" font-family="lt_regular" font-size="12pt" font-weight="bold" id="svg_4" text-decoration="none" x="-452.84" y="346">Jugador</text>
+    <text fill="#4b4b4b" font-family="noto_regular" font-size="10pt" id="svg_5" text-decoration="none" x="-397.06" y="346"/>
+   </g>
+  </g>
+  <g id="BfcphQZ1hsq">
+   <g id="svg_6" transform="translate(920 -380)">
+    <rect fill="white" height="50" id="svg_7" stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="180" x="-515" y="419"/>
+   </g>
+   <g id="svg_8" transform="translate(930 -367.5)">
+    <text fill="#04263d" font-family="noto_regular" font-size="14pt" font-weight="bold" id="svg_9" text-decoration="none" x="-480.84" y="439">Cassandra</text>
+    <text fill="#4b4b4b" font-family="noto_regular" font-size="10pt" id="svg_10" text-decoration="none" x="-389.06" y="439"/>
+   </g>
+  </g>
+  <g id="Rbm6p1dcKxy">
+   <g id="svg_161" transform="translate(880 280)">
+    <rect fill="rgba(1,95,169,1)" height="50" id="svg_162" stroke="#015fa9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" width="100" x="-465" y="329"/>
+   </g>
+   <g id="svg_163" transform="translate(890 296)">
+    <text fill="#ffffff" font-family="lt_regular" font-size="12pt" font-weight="bold" id="svg_164" text-decoration="none" x="-460.87" y="346">Mazmorra</text>
+    <text fill="#4b4b4b" font-family="noto_regular" font-size="10pt" id="svg_165" text-decoration="none" x="-389.03" y="346"/>
+   </g>
+  </g>
+  <g id="3G5ejOvJyHe">
+   <g id="svg_166" transform="translate(870 180)">
+    <path d="m-345,359l-60,30l-60,-30l60,-30l60,30l0,0z" fill="white" id="svg_167" stroke="#24afaf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+   </g>
+   <g id="svg_168" transform="translate(880 201)">
+    <text fill="rgb(75, 75, 75)" font-family="noto_regular" font-size="10pt" id="svg_169" text-decoration="none" x="-436.9" y="343">Realiza</text>
+    <text fill="#4b4b4b" font-family="noto_regular" font-size="10pt" id="svg_170" text-decoration="none" x="-393" y="343"/>
+   </g>
+  </g>
+  <g id="PemOltyYZxk">
+   <mask height="59" id="1fe6a" maskUnits="userSpaceOnUse" width="28" x="916" y="136">
+    <rect fill="white" height="59" id="svg_171" width="28" x="916" y="136"/>undefinedundefined</mask>
+   <g id="svg_172" mask="url(#1fe6a)">
+    <path d="m465,479l0,5.56q0,0.44 0,10.44q0,9.11 0,9.56l0,5.44" fill="none" id="svg_173" stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+   </g>undefinedundefined</g>
+  <g id="mlOtx9aPRtc">
+   <g id="svg_174">
+    <path d="m464.67,570l0,9.33q0,0.34 0,9.67q0,10 0,10.33l0,9.67" fill="none" id="svg_175" stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+   </g>
+  </g>
+  <g id="R91tBohhR92">
+   <g id="svg_176" transform="translate(1070.11 180)">
+    <ellipse cx="-420.06" cy="359" fill="white" id="svg_177" rx="44.94" ry="30" stroke="#FAC065" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+   </g>
+   <g id="svg_178" transform="translate(1080.12 201)">
+    <text fill="rgb(97, 114, 130)" font-family="noto_regular" font-size="10pt" id="svg_179" text-decoration="none" x="-453.56" y="343">Tiempo</text>
+    <text fill="#4b4b4b" font-family="noto_regular" font-size="10pt" id="svg_180" text-decoration="none" x="-406.47" y="343"/>
+   </g>
+  </g>
+  <g id="JKXdKBebHNN">
+   <g id="svg_181">
+    <path d="m525,539l80,0" fill="none" id="svg_182" stroke="#A8A8A8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+   </g>
+  </g>
+  <g id="P1kxvs70ayd">
+   <g id="svg_183" transform="translate(879.667 -40)">
+    <path d="m-345,359l-60,30l-60,-30l60,-30l60,30l0,0z" fill="white" id="svg_184" stroke="#4b4b4b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+   </g>
+   <g id="svg_185" transform="translate(889.667 -19)">
+    <text fill="rgb(75, 75, 75)" font-family="noto_regular" font-size="10pt" id="svg_186" text-decoration="none" x="-432.49" y="343">Juega</text>
+    <text fill="#4b4b4b" font-family="noto_regular" font-size="10pt" id="svg_187" text-decoration="none" x="-397.41" y="343"/>
+   </g>
+  </g>
+  <g id="HZNgOZ5ZvTd">
+   <mask height="108" id="0ee0f" maskUnits="userSpaceOnUse" width="38" x="916" y="6">
+    <rect fill="white" height="108" id="svg_188" width="38" x="916" y="6"/>
+    <rect fill="black" height="24" id="svg_189" width="13" x="923.5" y="58"/>
+   </mask>
+   <g id="svg_190" mask="url(#0ee0f)">
+    <path d="m465,429l0,-30q0,-5 5,-10q4.71,-5.33 4.75,-10l0.25,-30" fill="none" id="svg_191" stroke="#9A9A9A" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+   </g>
+   <g id="svg_192" transform="translate(926.5 61)">
+    <text fill="#4b4b4b" font-family="noto_regular" font-size="10pt" id="svg_193" text-decoration="none" x="-465" y="343">1</text>
+    <text fill="#4b4b4b" font-family="noto_regular" font-size="10pt" id="svg_194" text-decoration="none" x="-457.66" y="343"/>
+   </g>
+  </g>
+  <g id="GwO4doXcCMG">
+   <g id="svg_195" transform="translate(1099.44 -40)">
+    <rect fill="white" height="60" id="svg_196" stroke="#24afaf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="100" x="-465" y="329"/>
+   </g>
+   <g id="svg_197" transform="translate(1109.44 -19)">
+    <text fill="rgb(75, 75, 75)" font-family="noto_regular" font-size="10pt" id="svg_198" text-decoration="none" x="-444.52" y="343">Horda</text>
+    <text fill="#4b4b4b" font-family="noto_regular" font-size="10pt" id="svg_199" text-decoration="none" x="-405.38" y="343"/>
+   </g>
+  </g>
+  <g id="ch7i6K4ueRO">
+   <mask height="28" id="108f1" maskUnits="userSpaceOnUse" width="127" x="986" y="-24">
+    <rect fill="white" height="28" id="svg_200" width="127" x="986" y="-24"/>
+    <rect fill="black" height="24" id="svg_201" width="16" x="1061" y="-22"/>
+   </mask>
+   <g id="svg_202" mask="url(#108f1)">
+    <path d="m535,319l99,0" fill="none" id="svg_203" stroke="#9A9A9A" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+   </g>
+   <g id="svg_204" transform="translate(1064 -19)">
+    <text fill="#4b4b4b" font-family="noto_regular" font-size="10pt" id="svg_205" text-decoration="none" x="-465" y="343">N</text>
+    <text fill="#4b4b4b" font-family="noto_regular" font-size="10pt" id="svg_206" text-decoration="none" x="-454.86" y="343"/>
+   </g>
+  </g>
+  <g id="Uxd1J1KAK0d">
+   <g id="svg_207" transform="translate(875.889 -150)">
+    <ellipse cx="-385" cy="357.85" fill="white" id="svg_208" rx="80" ry="28.85" stroke="#F1CC84" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+   </g>
+   <g id="svg_209" transform="translate(885.889 -130.149)">
+    <text fill="rgb(97, 114, 130)" font-family="noto_regular" font-size="10pt" id="svg_210" text-decoration="none" x="-456.74" y="343">Numero_asesinatos</text>
+    <text fill="#4b4b4b" font-family="noto_regular" font-size="10pt" id="svg_211" text-decoration="none" x="-333.16" y="343"/>
+   </g>
+  </g>
+  <g id="FQmrutQJUuR">
+   <g id="svg_212">
+    <path d="m475,289l16,-52" fill="none" id="svg_213" stroke="#9A9A9A" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+   </g>
+  </g>
+  <g id="cZMGoLZKE7T">
+   <g id="svg_214" transform="translate(708.778 100)">
+    <ellipse cx="-415" cy="359" fill="white" id="svg_215" rx="50" ry="30" stroke="#F1CC84" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+   </g>
+   <g id="svg_216" transform="translate(718.778 121)">
+    <text fill="rgb(97, 114, 130)" font-family="noto_regular" font-size="10pt" id="svg_217" text-decoration="underline" x="-431.31" y="343">Id</text>
+    <text fill="#4b4b4b" font-family="noto_regular" font-size="10pt" id="svg_218" text-decoration="none" x="-418.59" y="343"/>
+   </g>
+  </g>
+  <g id="bWsA7emC0ZL">
+   <g id="svg_219">
+    <path d="m415,459l-71,0" fill="none" id="svg_220" stroke="#9A9A9A" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+   </g>
+  </g>
+  <g id="NxpZd5GQQUc">
+   <g id="svg_221" transform="translate(1158.78 70)">
+    <ellipse cx="-415" cy="359" fill="white" id="svg_222" rx="50" ry="30" stroke="#F1CC84" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+   </g>
+   <g id="svg_223" transform="translate(1168.78 91)">
+    <text fill="rgb(97, 114, 130)" font-family="noto_regular" font-size="10pt" id="svg_224" text-decoration="none" x="-437.64" y="343">País</text>
+    <text fill="#4b4b4b" font-family="noto_regular" font-size="10pt" id="svg_225" text-decoration="none" x="-412.26" y="343"/>
+   </g>
+  </g>
+  <g id="L3DFEWM2lOv">
+   <g id="svg_226">
+    <path d="m684,349l20,62" fill="none" id="svg_227" stroke="#9A9A9A" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+   </g>
+  </g>
+ </g>
+</svg>
