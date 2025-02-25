@@ -26,7 +26,9 @@ La 3 es otra parte de la base de datos, relacionado con nº de bichos matados en
 - [ ] 1. Definir bien las querys a realizar con cada leaderboard
 - [ ] 2. Crear las tablas teniendo en cuenta las primery, cluster y static keys (lo que sea eso)
 - [ ] 3. Tener en cuenta para cada una el tipo de cassandra según que es más importante
-- [ ] 4. Crear las query
+- [ ] 4. Crear las query cql
+- [ ] 5. Crear querys sql para obtener los datos
+- [ ] 6. Actualizar tablas escritura?
  
 ### Tareas 
 1. Diseña una base de datos Cassandra para dar servicio a las lecturas y escrituras anteriores. Argumenta tus decisiones de diseño. 
