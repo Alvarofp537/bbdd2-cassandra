@@ -9,6 +9,7 @@
 
 
 1. Estadísticas jugador
+       No sería que para determinada mazmorra determinado jugador el orden de cuanto a tardao en acabarla??
     - Muestra tiempo que ha tardado en completar cada mazmorra ordenado de menor a mayor
     - Importante consistencia
     - No tan importante la velocidad de actualización 
