@@ -1,7 +1,3 @@
--- Crear el keyspace
-CREATE KEYSPACE videojuego
-    WITH replciation ={'class': 'NetworkTopologyStrategy', 'replication_factor' :2 };
-
 -- Crear las tablas
 
 CREATE TABLE Hall_of_fame (
@@ -42,4 +38,3 @@ CREATE TABLE Top_horde (
     PRIMARY KEY((Evento_id, Pais), N_killed))
     wITH CLUSTERING ORDER BY (N_killed DESC)
 ;
-
