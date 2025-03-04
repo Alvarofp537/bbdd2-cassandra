@@ -49,19 +49,19 @@ CREATE TABLE Top_horde (
 // VAMOS A CREAR LA TABLA USUARIOS PARA FACILITAR LAS ESCRITURAS PARA ADAPTARLOS A LOS DATOS OFRECIDOS EN LAS SOLICITUDES DE ESCRITURAS
 
 CREATE TABLE Usuarios (
-    Pais VARCHAR,
     Email VARCHAR,
     Nombre_usuario VARCHAR,
+    Pais VARCHAR,
     PRIMARY KEY(Email)
 );
-
 
 
 -- Copiamos los datos de los csv obtenidos del modelo sql a cassandra
 
 // CORREGIR EL ORDEN DEL COPY SEGUN LAS TABLAS CSV
 
-COPY Hall_of_fame (Pais, Mazmorra_id, Email, Tiempo, Nombre_mazmorra, Nombre_usuario, Fecha) 
+
+COPY Hall_of_fame (Nombre_usuario, Email, Pais, Tiempo, Mazmorra_id, Nombre_mazmorra, Fecha) 
 FROM 'Query_sql/resultados/hall_of_fame.csv' 
 WITH DELIMITER=',' AND HEADER=TRUE;
 
@@ -74,3 +74,9 @@ WITH DELIMITER=',' AND HEADER=TRUE;
 COPY Top_horde (Nombre_usuario, Email, Pais, Evento_id, N_killed) 
 FROM 'Query_sql/resultados/hordas.csv' 
 WITH DELIMITER=',' AND HEADER=TRUE;
+
+
+COPY Usuarios (Email, Nombre_usuario, Pais) 
+FROM 'Query_sql/resultados/Usuarios.csv' 
+WITH DELIMITER=',' AND HEADER=TRUE;
+
