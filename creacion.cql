@@ -4,6 +4,8 @@ CREATE KEYSPACE videojuego
 
 -- Crear las tablas
 
+// USAMOS EMAIL COMO CLAVE DE CLUSTERING KEY POR QUE PUEDEN EXISITIR 2 USUARIOS DEL MISMO PAIS QUE EN LA MISMA MAZMORRA TENGA EL MISMO TIEMPO
+
 CREATE TABLE Hall_of_fame (
     Pais VARCHAR,
     Mazmorra_id INT,
@@ -40,8 +42,19 @@ CREATE TABLE Top_horde (
     Email VARCHAR,
     Nombre_usuario VARCHAR,
     PRIMARY KEY((Evento_id, Pais), N_killed))
-    wITH CLUSTERING ORDER BY (N_killed DESC)
+    WITH CLUSTERING ORDER BY (N_killed DESC)
 ;
+
+
+// VAMOS A CREAR LA TABLA USUARIOS PARA FACILITAR LAS ESCRITURAS PARA ADAPTARLOS A LOS DATOS OFRECIDOS EN LAS SOLICITUDES DE ESCRITURAS
+
+CREATE TABLE Usuarios (
+    Pais VARCHAR,
+    Email VARCHAR,
+    Nombre_usuario VARCHAR,
+    PRIMARY KEY(Email)
+);
+
 
 
 -- Copiamos los datos de los csv obtenidos del modelo sql a cassandra
