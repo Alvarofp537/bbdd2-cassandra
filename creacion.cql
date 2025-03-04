@@ -58,8 +58,6 @@ CREATE TABLE Usuarios (
 
 -- Copiamos los datos de los csv obtenidos del modelo sql a cassandra
 
-// CORREGIR EL ORDEN DEL COPY SEGUN LAS TABLAS CSV
-
 
 COPY Hall_of_fame (Nombre_usuario, Email, Pais, Tiempo, Mazmorra_id, Nombre_mazmorra, Fecha) 
 FROM 'Query_sql/resultados/hall_of_fame.csv' 
