@@ -17,7 +17,7 @@ CREATE TABLE Hall_of_fame (
 ;
 
 
--- USAMOS EMAIL TAMBIÉN COMO USERID
+// USAMOS EMAIL TAMBIÉN COMO USERID
 
 
 CREATE TABLE Statistic (
@@ -30,7 +30,7 @@ CREATE TABLE Statistic (
 ;
 
 
--- USAMOS TAMBIEN EL PAIS COMO CLAVE PARTICIONAL POR QUE LOS EVENT id ESTÁN REPETIDOS EN DISTINTOS PAISES (MISMOS EVENTOS EN OTROS PAÍSES)
+// USAMOS TAMBIEN EL PAIS COMO CLAVE PARTICIONAL POR QUE LOS EVENT id ESTÁN REPETIDOS EN DISTINTOS PAISES (MISMOS EVENTOS EN OTROS PAÍSES)
 
 
 CREATE TABLE Top_horde (
@@ -43,3 +43,21 @@ CREATE TABLE Top_horde (
     wITH CLUSTERING ORDER BY (N_killed DESC)
 ;
 
+
+-- Copiamos los datos de los csv obtenidos del modelo sql a cassandra
+
+// CORREGIR EL ORDEN DEL COPY SEGUN LAS TABLAS CSV
+
+COPY Hall_of_fame (Pais, Mazmorra_id, Email, Tiempo, Nombre_mazmorra, Nombre_usuario, Fecha) 
+FROM 'Query_sql/resultados/hall_of_fame.csv' 
+WITH DELIMITER=',' AND HEADER=TRUE;
+
+
+COPY Statistic (Email, Mazmorra_id, Tiempo, Fecha) 
+FROM 'Query_sql/resultados/estadisticas.csv' 
+WITH DELIMITER=',' AND HEADER=TRUE;
+
+
+COPY Top_horde (Nombre_usuario, Email, Pais, Evento_id, N_killed) 
+FROM 'Query_sql/resultados/hordas.csv' 
+WITH DELIMITER=',' AND HEADER=TRUE;
