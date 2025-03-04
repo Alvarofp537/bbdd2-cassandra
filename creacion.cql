@@ -60,21 +60,21 @@ CREATE TABLE Usuarios (
 
 
 COPY Hall_of_fame (Nombre_usuario, Email, Pais, Tiempo, Mazmorra_id, Nombre_mazmorra, Fecha) 
-FROM 'Query_sql/resultados/hall_of_fame.csv' 
+FROM './resultados/hall_of_fame_top5.csv' 
 WITH DELIMITER=',' AND HEADER=TRUE;
 
 
 COPY Statistic (Email, Mazmorra_id, Tiempo, Fecha) 
-FROM 'Query_sql/resultados/estadisticas.csv' 
+FROM './resultados/estadisticas.csv' 
 WITH DELIMITER=',' AND HEADER=TRUE;
 
 
 COPY Top_horde (Nombre_usuario, Email, Pais, Evento_id, N_killed) 
-FROM 'Query_sql/resultados/hordas.csv' 
+FROM './resultados/hordas.csv' 
 WITH DELIMITER=',' AND HEADER=TRUE;
 
 
 COPY Usuarios (Email, Nombre_usuario, Pais) 
-FROM 'Query_sql/resultados/Usuarios.csv' 
+FROM './resultados/Usuarios.csv' 
 WITH DELIMITER=',' AND HEADER=TRUE;
 
