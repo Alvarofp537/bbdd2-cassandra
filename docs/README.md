@@ -54,10 +54,15 @@ Editar: https://app.creately.com/d/etfwJcqGDeY/edit
 
 ### Decisiones:
 
+#### Pasos para base de datos
+1. Docker compose y esperar a que arranque todo bien (nodestatus tool todos a US)
+2. Ejecutar SOURCE '/var/lib/cassandra/creacion.cql'; en cqlsh para crear las tablas
+3. Utilizar funciones python para hacer las queries a los datos
+
+
 #### Top horde
 Debido a que es importante la velocidad de lectura, el order by lo mantenemos en la clustering key, aunque para actualizarla haya que hacer un delete/insert (más costoso)
 
-SOURCE '/var/lib/cassandra/creacion.cql';
 
 #### Querys que funcionan:
 
