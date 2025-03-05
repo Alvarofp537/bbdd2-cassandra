@@ -39,13 +39,11 @@ La 3 es otra parte de la base de datos, relacionado con nº de bichos matados en
 - [ ] 5. [OPCIONAL] Si el diseño lo necesita, actualiza la tabla de escrituras para incluir cualquier modificación que sea necesaria en la información que se le debe proporcionar al servidor. 
 - [ ] 6. Haz un fichero .cql que realice las consultas de escritura y lectura necesarias. Incluye el nivel de consistencia de cada consulta, teniendo en cuenta las características de los diferentes rankings.
 
+---
 
 ### Entidad Relación
 
 ![Diagrama_Chebotko](er_cutted.svg)
-
-
-### Queries
 
 
 ### Chebotko Diagram
@@ -53,3 +51,8 @@ Editar: https://app.creately.com/d/etfwJcqGDeY/edit
 
 ![Diagrama_Chebotko](diagrama_v2.png)
 
+
+### Decisiones:
+
+#### Top horde
+Debido a que es importante la velocidad de lectura, el order by lo mantenemos en la clustering key, aunque para actualizarla haya que hacer un delete/insert (más costoso)
