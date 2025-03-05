@@ -1,6 +1,10 @@
+DROP KEYSPACE IF EXISTS videojuego;
+
 -- Crear el keyspace
 CREATE KEYSPACE videojuego
-    WITH replciation ={'class': 'NetworkTopologyStrategy', 'replication_factor' :2 };
+WITH replication = {'class': 'NetworkTopologyStrategy', 'replication_factor': 2};
+
+USE videojuego;
 
 -- Crear las tablas
 
@@ -14,7 +18,7 @@ CREATE TABLE Hall_of_fame (
     Nombre_mazmorra VARCHAR STATIC,
     Nombre_usuario VARCHAR,
     Fecha VARCHAR,
-    PRIMARY KEY((Pais, Mazmorra_id), Email, Tiempo))
+    PRIMARY KEY((Pais, Mazmorra_id, Email), Tiempo))
     WITH CLUSTERING ORDER BY (Tiempo ASC)
 ;
 
@@ -60,21 +64,21 @@ CREATE TABLE Usuarios (
 
 
 COPY Hall_of_fame (Nombre_usuario, Email, Pais, Tiempo, Mazmorra_id, Nombre_mazmorra, Fecha) 
-FROM './resultados/hall_of_fame_top5.csv' 
+FROM '/var/lib/cassandra/resultados/hall_of_fame_top5.csv' 
 WITH DELIMITER=',' AND HEADER=TRUE;
 
 
 COPY Statistic (Email, Mazmorra_id, Tiempo, Fecha) 
-FROM './resultados/estadisticas.csv' 
+FROM '/var/lib/cassandra/resultados/estadisticas.csv' 
 WITH DELIMITER=',' AND HEADER=TRUE;
 
 
 COPY Top_horde (Nombre_usuario, Email, Pais, Evento_id, N_killed) 
-FROM './resultados/hordas.csv' 
+FROM '/var/lib/cassandra/resultados/hordas.csv' 
 WITH DELIMITER=',' AND HEADER=TRUE;
 
 
 COPY Usuarios (Email, Nombre_usuario, Pais) 
-FROM './resultados/Usuarios.csv' 
+FROM '/var/lib/cassandra/resultados/Usuarios.csv' 
 WITH DELIMITER=',' AND HEADER=TRUE;
 
