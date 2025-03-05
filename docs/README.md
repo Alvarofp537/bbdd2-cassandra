@@ -58,3 +58,22 @@ Editar: https://app.creately.com/d/etfwJcqGDeY/edit
 Debido a que es importante la velocidad de lectura, el order by lo mantenemos en la clustering key, aunque para actualizarla haya que hacer un delete/insert (más costoso)
 
 SOURCE '/var/lib/cassandra/creacion.cql';
+
+#### Querys que funcionan:
+
+SELECT Tiempo, Fecha
+FROM Statistic
+WHERE Email = 'abag@example.com' AND Mazmorra_id = 0 
+ALLOW FILTERING;
+
+
+SELECT Email, Nombre_usuario, N_killed
+FROM Top_horde
+WHERE Evento_id = 2 AND Pais = 'ja_JP' 
+LIMIT 5;
+
+SELECT Mazmorra_id, Nombre_mazmorra, Email, Nombre_usuario, Tiempo, Fecha
+FROM Hall_of_fame
+WHERE Pais = 'ja_JP'
+ALLOW FILTERING;
+

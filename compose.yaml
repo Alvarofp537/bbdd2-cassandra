@@ -31,7 +31,7 @@ services:
       CASSANDRA_NUM_TOKENS: 128
       MAX_HEAP_SIZE: 512M
       HEAP_NEWSIZE: 256M
-    command: ["sh", "-c", "/scripts/init.sh"]  # Script de inicialización
+      CASSANDRA_RPC_ADDRESS: 127.0.0.1
 
   node2:
     image: cassandra:5.0
@@ -49,7 +49,6 @@ services:
       - "9043:9042"
     volumes:
       - ./tmp/cassandra2:/var/lib/cassandra
-      - ./scripts:/scripts  # Carpeta con los scripts
     environment:
       CASSANDRA_SEEDS: cassandra1,cassandra2
       CASSANDRA_CLUSTER_NAME: Alguel
@@ -59,7 +58,7 @@ services:
       CASSANDRA_NUM_TOKENS: 128
       MAX_HEAP_SIZE: 512M
       HEAP_NEWSIZE: 256M
-    command: ["sh", "-c", "/scripts/init.sh"]
+      CASSANDRA_RPC_ADDRESS: 127.0.0.1
     depends_on:
       node1:
         condition: service_healthy
@@ -80,7 +79,6 @@ services:
       - "9044:9042"
     volumes:
       - ./tmp/cassandra3:/var/lib/cassandra
-      - ./scripts:/scripts  # Carpeta con los scripts
     environment:
       CASSANDRA_SEEDS: cassandra1,cassandra2
       CASSANDRA_CLUSTER_NAME: Alguel
@@ -90,7 +88,7 @@ services:
       CASSANDRA_NUM_TOKENS: 128
       MAX_HEAP_SIZE: 512M
       HEAP_NEWSIZE: 256M
-    command: ["sh", "-c", "/scripts/init.sh"]
+      CASSANDRA_RPC_ADDRESS: 127.0.0.1
     depends_on:
       node2:
         condition: service_healthy

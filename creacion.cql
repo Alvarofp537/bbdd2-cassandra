@@ -18,8 +18,8 @@ CREATE TABLE Hall_of_fame (
     Nombre_mazmorra VARCHAR STATIC,
     Nombre_usuario VARCHAR,
     Fecha VARCHAR,
-    PRIMARY KEY((Pais, Mazmorra_id, Email), Tiempo))
-    WITH CLUSTERING ORDER BY (Tiempo ASC)
+    PRIMARY KEY((Pais, Email), Mazmorra_id, Tiempo))
+    WITH CLUSTERING ORDER BY (Tiempo ASC, Mazmorra_id ASC)
 ;
 
 
