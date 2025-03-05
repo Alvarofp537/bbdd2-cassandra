@@ -56,3 +56,5 @@ Editar: https://app.creately.com/d/etfwJcqGDeY/edit
 
 #### Top horde
 Debido a que es importante la velocidad de lectura, el order by lo mantenemos en la clustering key, aunque para actualizarla haya que hacer un delete/insert (más costoso)
+
+SOURCE '/var/lib/cassandra/creacion.cql';
