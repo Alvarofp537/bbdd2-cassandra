@@ -18,8 +18,8 @@ CREATE TABLE Hall_of_fame (
     Nombre_mazmorra VARCHAR STATIC,
     Nombre_usuario VARCHAR,
     Fecha VARCHAR,
-    PRIMARY KEY((Pais, Email), Mazmorra_id, Tiempo))
-    WITH CLUSTERING ORDER BY (Mazmorra_id ASC, Tiempo ASC)
+    PRIMARY KEY((Pais, Email), Tiempo, Mazmorra_id))
+    WITH CLUSTERING ORDER BY (Tiempo ASC, Mazmorra_id ASC)
 ;
 
 
@@ -45,8 +45,8 @@ CREATE TABLE Top_horde (
     N_killed INT,
     Email VARCHAR,
     Nombre_usuario VARCHAR,
-    PRIMARY KEY((Evento_id, Pais), N_killed))
-    WITH CLUSTERING ORDER BY (N_killed DESC)
+    PRIMARY KEY((Evento_id, Pais), N_killed, Email))
+    WITH CLUSTERING ORDER BY (N_killed DESC, Email ASC)
 ;
 
 
