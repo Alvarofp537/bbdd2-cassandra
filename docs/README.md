@@ -96,7 +96,7 @@ docker compose up -d
 
 2. Copiar el archivo `creacion.cql` y la carpeta resultados en la carpeta tmp/cassandra1
 ```bash
-cp creacion.cql tmp/cassandra1/creacion.cql
+cp creacion.cql tmp/cassandra1/
 cp -r Query_sql/resultados tmp/cassandra1/
 ```
 
