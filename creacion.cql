@@ -31,7 +31,7 @@ CREATE TABLE Statistic (
     Mazmorra_id INT,
     Tiempo FLOAT,
     Fecha VARCHAR,
-    PRIMARY KEY((Email, Mazmorra_id), Tiempo))
+    PRIMARY KEY((Email, Mazmorra_id), Tiempo, Fecha))
     WITH CLUSTERING ORDER BY (Tiempo ASC)
 ;
 

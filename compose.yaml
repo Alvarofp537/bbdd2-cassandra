@@ -21,7 +21,6 @@ services:
       - "9042:9042"
     volumes:
       - ./tmp/cassandra1:/var/lib/cassandra
-      - ./scripts:/scripts  # Carpeta con los scripts
     environment:
       CASSANDRA_SEEDS: cassandra1,cassandra2
       CASSANDRA_CLUSTER_NAME: Alguel
