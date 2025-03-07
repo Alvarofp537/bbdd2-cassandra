@@ -64,21 +64,49 @@ Editar: https://app.creately.com/d/etfwJcqGDeY/edit
 Debido a que es importante la velocidad de lectura, el order by lo mantenemos en la clustering key, aunque para actualizarla haya que hacer un delete/insert (más costoso)
 
 
-#### Querys que funcionan:
-
+#### Querys de lectura que funcionan:
+```cql
 SELECT Tiempo, Fecha
 FROM Statistic
 WHERE Email = 'abag@example.com' AND Mazmorra_id = 0 
 ALLOW FILTERING;
+```
 
-
+```cql
 SELECT Email, Nombre_usuario, N_killed
 FROM Top_horde
 WHERE Evento_id = 2 AND Pais = 'ja_JP' 
 LIMIT 5;
+```
 
+```cql
 SELECT Mazmorra_id, Nombre_mazmorra, Email, Nombre_usuario, Tiempo, Fecha
 FROM Hall_of_fame
 WHERE Pais = 'ja_JP'
 ALLOW FILTERING;
+```
 
+### Quick guide
+
+1. Poner en ejecución la base de datos con 3 nodos:
+
+```bash
+docker compose up -d
+```
+
+2. Copiar el archivo `creacion.cql` y la carpeta resultados en la carpeta tmp/cassandra1
+```bash
+cp creacion.cql tmp/cassandra1/creacion.cql
+cp -r Query_sql/resultados tmp/cassandra1/
+```
+
+3. Cargar los datos en cassandra
+
+```bash
+docker exec -it cassandra1 cqlsh
+```
+```cqlsh
+SOURCE '/var/lib/cassandra/creacion.cql';
+```
+
+4. Ejecutar las queries desde cqlsh o python

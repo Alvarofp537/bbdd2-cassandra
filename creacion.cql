@@ -79,6 +79,6 @@ WITH DELIMITER=',' AND HEADER=TRUE;
 
 
 COPY Usuarios (Email, Nombre_usuario, Pais) 
-FROM '/var/lib/cassandra/resultados/Usuarios.csv' 
+FROM '/var/lib/cassandra/resultados/usuarios.csv' 
 WITH DELIMITER=',' AND HEADER=TRUE;
 
