@@ -13,13 +13,13 @@ USE videojuego;
 CREATE TABLE Hall_of_fame (
     Pais VARCHAR,
     Mazmorra_id INT,
-    Email VARCHAR,
     Tiempo FLOAT,
+    Email VARCHAR,
     Nombre_mazmorra VARCHAR STATIC,
     Nombre_usuario VARCHAR,
     Fecha VARCHAR,
     PRIMARY KEY((Pais, Email), Mazmorra_id, Tiempo))
-    WITH CLUSTERING ORDER BY (Tiempo ASC, Mazmorra_id ASC)
+    WITH CLUSTERING ORDER BY (Mazmorra_id ASC, Tiempo ASC)
 ;
 
 
