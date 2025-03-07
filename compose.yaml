@@ -31,7 +31,7 @@ services:
       CASSANDRA_NUM_TOKENS: 128
       MAX_HEAP_SIZE: 512M
       HEAP_NEWSIZE: 256M
-      CASSANDRA_RPC_ADDRESS: 127.0.0.1
+      CASSANDRA_RPC_ADDRESS: 0.0.0.0
 
   node2:
     image: cassandra:5.0
@@ -58,7 +58,8 @@ services:
       CASSANDRA_NUM_TOKENS: 128
       MAX_HEAP_SIZE: 512M
       HEAP_NEWSIZE: 256M
-      CASSANDRA_RPC_ADDRESS: 127.0.0.1
+      CASSANDRA_RPC_ADDRESS: 0.0.0.0
+
     depends_on:
       node1:
         condition: service_healthy
@@ -88,7 +89,8 @@ services:
       CASSANDRA_NUM_TOKENS: 128
       MAX_HEAP_SIZE: 512M
       HEAP_NEWSIZE: 256M
-      CASSANDRA_RPC_ADDRESS: 127.0.0.1
+      CASSANDRA_RPC_ADDRESS: 0.0.0.0
+      
     depends_on:
       node2:
         condition: service_healthy
