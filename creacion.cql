@@ -13,13 +13,13 @@ USE videojuego;
 CREATE TABLE Hall_of_fame (
     Pais VARCHAR,
     Mazmorra_id INT,
-    Email VARCHAR,
     Tiempo FLOAT,
+    Email VARCHAR,
     Nombre_mazmorra VARCHAR STATIC,
     Nombre_usuario VARCHAR,
     Fecha VARCHAR,
-    PRIMARY KEY((Pais, Mazmorra_id, Email), Tiempo))
-    WITH CLUSTERING ORDER BY (Tiempo ASC)
+    PRIMARY KEY((Pais, Email), Tiempo, Mazmorra_id))
+    WITH CLUSTERING ORDER BY (Tiempo ASC, Mazmorra_id ASC)
 ;
 
 
@@ -31,8 +31,8 @@ CREATE TABLE Statistic (
     Mazmorra_id INT,
     Tiempo FLOAT,
     Fecha VARCHAR,
-    PRIMARY KEY((Email, Mazmorra_id), Tiempo))
-    WITH CLUSTERING ORDER BY (Tiempo ASC)
+    PRIMARY KEY((Email, Mazmorra_id), Tiempo, Fecha))
+    WITH CLUSTERING ORDER BY (Tiempo ASC, Fecha DESC)
 ;
 
 
@@ -45,8 +45,8 @@ CREATE TABLE Top_horde (
     N_killed INT,
     Email VARCHAR,
     Nombre_usuario VARCHAR,
-    PRIMARY KEY((Evento_id, Pais), N_killed))
-    WITH CLUSTERING ORDER BY (N_killed DESC)
+    PRIMARY KEY((Evento_id, Pais), N_killed, Email))
+    WITH CLUSTERING ORDER BY (N_killed DESC, Email ASC)
 ;
 
 
@@ -79,6 +79,6 @@ WITH DELIMITER=',' AND HEADER=TRUE;
 
 
 COPY Usuarios (Email, Nombre_usuario, Pais) 
-FROM '/var/lib/cassandra/resultados/Usuarios.csv' 
+FROM '/var/lib/cassandra/resultados/usuarios.csv' 
 WITH DELIMITER=',' AND HEADER=TRUE;
 
