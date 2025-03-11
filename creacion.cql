@@ -15,12 +15,13 @@ CREATE TABLE Hall_of_fame (
     Mazmorra_id INT,
     Tiempo FLOAT,
     Email VARCHAR,
-    Nombre_mazmorra VARCHAR STATIC,
-    Nombre_usuario VARCHAR,
     Fecha VARCHAR,
-    PRIMARY KEY((Pais, Email), Tiempo, Mazmorra_id))
-    WITH CLUSTERING ORDER BY (Tiempo ASC, Mazmorra_id ASC)
+    Nombre_usuario VARCHAR,
+    Nombre_mazmorra VARCHAR STATIC,
+    PRIMARY KEY ((Pais, Mazmorra_id), Tiempo, Email))
+    WITH CLUSTERING ORDER BY (Tiempo ASC, Email ASC)
 ;
+
 
 
 // USAMOS EMAIL TAMBIÉN COMO USERID
