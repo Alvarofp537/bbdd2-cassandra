@@ -2,7 +2,6 @@
 
 Este documento describe el diseño, implementación y consideraciones realizadas para la migración del modelo relacional a una base de datos NoSQL (Cassandra) destinada a la gestión de estadísticas y registros en un videojuego.
 
----
 ### Quick start
 
 1. **Iniciar el Clúster:**
