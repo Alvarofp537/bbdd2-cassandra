@@ -8,19 +8,20 @@ USE videojuego;
 
 -- Crear las tablas
 
-// USAMOS EMAIL COMO CLAVE DE CLUSTERING KEY POR QUE PUEDEN EXISITIR 2 USUARIOS DEL MISMO PAIS QUE EN LA MISMA MAZMORRA TENGA EL MISMO TIEMPO
+// USAMOS EMAIL COMO CLAVE DE PARTICION POR QUE PUEDEN EXISITIR 2 USUARIOS DEL MISMO PAIS QUE EN LA MISMA MAZMORRA TENGA EL MISMO TIEMPO
 
 CREATE TABLE Hall_of_fame (
     Pais VARCHAR,
     Mazmorra_id INT,
-    Email VARCHAR,
     Tiempo FLOAT,
-    Nombre_mazmorra VARCHAR STATIC,
-    Nombre_usuario VARCHAR,
+    Email VARCHAR,
     Fecha VARCHAR,
-    PRIMARY KEY((Pais, Email), Mazmorra_id, Tiempo))
-    WITH CLUSTERING ORDER BY (Tiempo ASC, Mazmorra_id ASC)
+    Nombre_usuario VARCHAR,
+    Nombre_mazmorra VARCHAR STATIC,
+    PRIMARY KEY ((Pais, Mazmorra_id), Tiempo, Email))
+    WITH CLUSTERING ORDER BY (Tiempo ASC, Email ASC)
 ;
+
 
 
 // USAMOS EMAIL TAMBIÉN COMO USERID
@@ -31,8 +32,8 @@ CREATE TABLE Statistic (
     Mazmorra_id INT,
     Tiempo FLOAT,
     Fecha VARCHAR,
-    PRIMARY KEY((Email, Mazmorra_id), Tiempo))
-    WITH CLUSTERING ORDER BY (Tiempo ASC)
+    PRIMARY KEY((Email, Mazmorra_id), Tiempo, Fecha))
+    WITH CLUSTERING ORDER BY (Tiempo ASC, Fecha DESC)
 ;
 
 
@@ -45,8 +46,8 @@ CREATE TABLE Top_horde (
     N_killed INT,
     Email VARCHAR,
     Nombre_usuario VARCHAR,
-    PRIMARY KEY((Evento_id, Pais), N_killed))
-    WITH CLUSTERING ORDER BY (N_killed DESC)
+    PRIMARY KEY((Evento_id, Pais), N_killed, Email))
+    WITH CLUSTERING ORDER BY (N_killed DESC, Email ASC)
 ;
 
 
@@ -79,6 +80,6 @@ WITH DELIMITER=',' AND HEADER=TRUE;
 
 
 COPY Usuarios (Email, Nombre_usuario, Pais) 
-FROM '/var/lib/cassandra/resultados/Usuarios.csv' 
+FROM '/var/lib/cassandra/resultados/usuarios.csv' 
 WITH DELIMITER=',' AND HEADER=TRUE;
 

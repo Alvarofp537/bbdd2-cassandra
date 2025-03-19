@@ -1,5 +1,3 @@
-version: '3.9'
-
 networks:
   cassandra:
     driver: bridge
@@ -21,7 +19,6 @@ services:
       - "9042:9042"
     volumes:
       - ./tmp/cassandra1:/var/lib/cassandra
-      - ./scripts:/scripts  # Carpeta con los scripts
     environment:
       CASSANDRA_SEEDS: cassandra1,cassandra2
       CASSANDRA_CLUSTER_NAME: Alguel
@@ -31,7 +28,7 @@ services:
       CASSANDRA_NUM_TOKENS: 128
       MAX_HEAP_SIZE: 512M
       HEAP_NEWSIZE: 256M
-      CASSANDRA_RPC_ADDRESS: 127.0.0.1
+      CASSANDRA_RPC_ADDRESS: 0.0.0.0
 
   node2:
     image: cassandra:5.0
@@ -58,7 +55,8 @@ services:
       CASSANDRA_NUM_TOKENS: 128
       MAX_HEAP_SIZE: 512M
       HEAP_NEWSIZE: 256M
-      CASSANDRA_RPC_ADDRESS: 127.0.0.1
+      CASSANDRA_RPC_ADDRESS: 0.0.0.0
+
     depends_on:
       node1:
         condition: service_healthy
@@ -88,7 +86,8 @@ services:
       CASSANDRA_NUM_TOKENS: 128
       MAX_HEAP_SIZE: 512M
       HEAP_NEWSIZE: 256M
-      CASSANDRA_RPC_ADDRESS: 127.0.0.1
+      CASSANDRA_RPC_ADDRESS: 0.0.0.0
+      
     depends_on:
       node2:
         condition: service_healthy
