@@ -42,6 +42,10 @@ Este documento describe el diseño, implementación y consideraciones realizadas
 - **Nombre de la Mazmorra:** Es un campo estático, ya que cada partición (definida por la *mazmorra id*) corresponde siempre al mismo nombre.
 - **Orden de Tiempos:** Los tiempos se ordenan de forma ascendente para facilitar la selección de los 5 mejores registros.
 
+### Tabla Statistic
+- **Clave de Partición:** Se ha utilizado como clave de partición los valores de **Email** y **mazmorra_id** para almacenar de forma conjunta las estadísticas de cada jugador sobre cada mazmorra.
+- **Clustering Key:** Hemos usado **Tiempo** para ordenar de menor a mayor los tiempos de finalización de cada mazmorra junto con **Fecha** para evitar que si un jugador completa la misma mazmorra dos veces con el mismo tiempo, se pierda información sobre sus estadísticas.
+
 ### Tabla Top_horde
 
 - **Clave de Partición:** Se utiliza la combinación de **evento_id** y **País**, puesto que el mismo evento se repite en distintos países.
@@ -87,6 +91,6 @@ Hemos creado también `creacion.cql`, donde se implementa el diseño de las 3 ta
 
 ### Queries 
 
-Hemos creado `queries.cql` con ejemplo de las queries, pero también hemos creado `escriture.ipynb` y `lectura.iypnb`, para hacer de manera más realista como el videojuego haría las peticiones a la base de datos. Estos cuadernos jupyter funcionan con la base de datos creada.
+Hemos creado `queries.cql` con ejemplo de las queries que utilizaríamos para realizar los ejercicios solicitados, pero también hemos creado `escritura.ipynb` y `lectura.iypnb`, para simular de manera más realista como el videojuego haría las peticiones a la base de datos mediante triggers o llamadas a funciones. Estos cuadernos jupyter funcionan una vez la base de datos ha sido creada .
 
 ---
