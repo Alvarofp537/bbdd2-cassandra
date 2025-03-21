@@ -9,10 +9,12 @@
 
 Una vez iniciado, nos registramos con la contraseña que aparece en el archivo `Dockerfile` dentro de la carpeta `dockerimg`.
 
-> ⚠️ **Advertencia:** Es necesario subir al contenedor de trabajo Jupyter Notebook las imágenes `cara.png` y `hulk.webp`.
+> [!WARNING]
+> Es necesario subir al contenedor de trabajo Jupyter Notebook las imágenes `cara.png` y `hulk.webp`.
 
 ## Implementación del servicio Redis
-... 
+
+Para almacenar y recuperar imágenes en Redis, se utiliza la función `hset`, que permite guardar información clave-valor. En este caso, cada imagen se almacena con su embedding (vector de características) y su ruta dentro del sistema de archivos. Esto permite realizar las búsquedas de manera eficiente en la base de datos.
 
 
 
