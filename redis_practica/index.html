@@ -1,0 +1,155 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>Memoria de la Base de Datos Redis para la selección de avatares - Memoria Redis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#memoria-de-la-base-de-datos-redis-para-la-seleccion-de-avatares" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+<h1 id="memoria-de-la-base-de-datos-redis-para-la-seleccion-de-avatares">Memoria de la Base de Datos Redis para la selección de avatares</h1>
+<p><strong>Iniciar el contenedor:</strong></p>
+<ul>
+<li>Levantar el contenedor local para trabajar con jupyter-notebook:
+     <code>bash
+     docker compose up -d</code></li>
+</ul>
+<p>Una vez iniciado, nos registramos con la contraseña que aparece en el archivo <code>Dockerfile</code> dentro de la carpeta <code>dockerimg</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Atención</p>
+<p>Es necesario subir al contenedor de trabajo Jupyter Notebook las imágenes <code>cara.png</code> y <code>hulk.webp</code>.</p>
+</div>
+<h2 id="implementacion-del-servicio-redis">Implementación del servicio Redis</h2>
+<p>Para almacenar y recuperar imágenes en Redis, se utiliza la función <code>hset</code>, que permite guardar información clave-valor. </p>
+<p>En este caso, cada imagen se almacena con su embedding (vector de características) y su ruta dentro del sistema de archivos. Esto permite realizar las búsquedas de manera eficiente en la base de datos.</p>
+<h2 id="comparacion-de-los-resultados">Comparación de los resultados</h2>
+<p>Hemos utilizado <strong>dos índices</strong> para nuestras métricas:  </p>
+<ul>
+<li><strong>Índice FLAT</strong>: No tiene ninguna estructura de optimización y busca en toda la base de datos al realizar consultas de similitud.  </li>
+<li><strong>Índice HNSW</strong>: Usa una estructura en grafo para acelerar la búsqueda, siendo más eficiente en grandes conjuntos de datos.  </li>
+</ul>
+<p>Las <strong>métricas utilizadas</strong> son:  </p>
+<ul>
+<li><strong>Métrica coseno</strong>: Evalúa la alineación de los vectores sin importar su magnitud.  </li>
+<li><strong>Norma L2 (métrica euclídea)</strong>: Mide la diferencia absoluta entre dos vectores y es sensible a la magnitud.  </li>
+</ul>
+<h3 id="resultados-de-la-busqueda-de-fotos-similares"><strong>Resultados de la búsqueda de fotos similares</strong></h3>
+<p>Al buscar imágenes similares, los resultados obtenidos (imágenes consideradas similares) serán los mismos sin importar la métrica o el índice utilizado.  </p>
+<h3 id="resultados-al-buscar-imagenes-basadas-en-un-prompt"><strong>Resultados al buscar imágenes basadas en un prompt</strong></h3>
+<p>Cuando solicitamos imágenes basadas en un <strong>prompt</strong> (en este caso, avatares que contengan la palabra <code>caballeros</code>), los resultados sí varían:  </p>
+<ul>
+<li><strong>Usando la distancia euclídea</strong>:  </li>
+<li>
+<p>Los resultados son aparentemente buenos, sin importar el tipo de índice utilizado.  </p>
+</li>
+<li>
+<p><strong>Usando la distancia coseno</strong>:  </p>
+</li>
+<li>Los resultados varían más.  </li>
+<li>Con el <strong>índice FLAT</strong>, a excepción del primero, los resultados no parecen estar relacionados con la solicitud.  </li>
+<li>Con el <strong>índice basado en grafos (HNSW)</strong>, se obtiene un mejor desempeño, logrando encontrar caballeros en las tres imágenes obtenidas.  </li>
+</ul>
+
+
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
